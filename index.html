@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="emerald">
 <head>
+  
+<link rel="manifest" href="/payease-payroll/manifest.json">
+<meta name="theme-color" content="#059669">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PayEase">
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>PayEase India — Live Payroll & Attendance</title>
@@ -2274,5 +2280,16 @@
       initPayEaseApp();
     }
   </script>
+  
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register(
+      "/payease-payroll/service-worker.js"
+    );
+  });
+}
+</script>
+  
 </body>
 </html>
